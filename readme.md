@@ -32,6 +32,8 @@
 
 ## 🧐 About <a name = "about"></a>
 
+Link to deployed website: 
+
 This project will be built out over 3 different classes:
 
 - **Nodejs week 3** - Here you will be building the backend api. Meaning you will work in the `src/backend` folder.
