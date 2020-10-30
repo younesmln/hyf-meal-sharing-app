@@ -38,7 +38,7 @@ This project will be built out over 3 different classes:
 
 - **Nodejs week 3** - Here you will be building the backend api. Meaning you will work in the `src/backend` folder.
 - **React week 5** - Here you will be building the frontend components and routing. In this week you will be working in the `src/client` folder.
-- **Meal sharing class** - After week 5 of react you will have a specific class for finishing the meal sharing website. Here you will make everything working and deploy the website to the internet
+- **Meal sharing class** - After week 5 of react you will have a specific class for finishing the meal sharing website. Here you will make everything work and deploy the website to the internet
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
