@@ -42,6 +42,12 @@ This project will be built out over 3 different classes:
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
+
+## Deployment <a name = "deployment"></a>
+
+Check here how to depoly an app on Heroku https://github.com/HackYourFuture-CPH/node.js/blob/master/deployment.md and watch this video https://www.youtube.com/watch?v=A9ZcSOc7hCw
+
+
 ### Environment variables
 
 All sensitive data like fx passwords and usernames, we dont want to add to git! This problem we solve by having environment variables. Environment variables are not committed to git and have a key value structure.
