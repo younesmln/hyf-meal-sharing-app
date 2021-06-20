@@ -12,9 +12,9 @@ function MealsList() {
       });
 
   return (
-    <div>
+    <div className="container">
       <p>meals: </p>
-      <ul>{mealsToRender}</ul>
+      <ul className="list">{mealsToRender}</ul>
     </div>
   );
 }

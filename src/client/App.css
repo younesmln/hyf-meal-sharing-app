@@ -1,3 +1,10 @@
 * {
     box-sizing: border-box;
 }
+
+
+.container {
+    border: 1px #bebebe solid;
+    padding: 30px;
+    margin: 10px;
+}
