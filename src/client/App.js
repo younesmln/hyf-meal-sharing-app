@@ -1,20 +1,30 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import TestComponent from "./components/TestComponent/TestComponent";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import TestComponent from './components/TestComponent/TestComponent';
+import MealsList from './components/TestComponent/MealsList';
+import { useMeals } from './components/TestComponent/useMeals';
+import { MealsProvider } from './mealsContext';
 
 function App() {
+  const { isLoading, meals } = useMeals();
+
+
+  const contextValue = { isLoading, meals }
+
   return (
-    <Router>
-      <Route exact path="/">
-        <p>test</p>
-      </Route>
-      <Route exact path="/lol">
-        <p>lol</p>
-      </Route>
-      <Route exact path="/test-component">
-        <TestComponent></TestComponent>
-      </Route>
-    </Router>
+    <MealsProvider value={contextValue}>
+      <Router>
+        <Route exact path="/">
+          <MealsList />
+        </Route>
+        <Route exact path="/lol">
+          <p>lol</p>
+        </Route>
+        <Route exact path="/test-component">
+          <TestComponent></TestComponent>
+        </Route>
+      </Router>
+    </MealsProvider>
   );
 }
 
