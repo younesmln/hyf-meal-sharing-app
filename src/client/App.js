@@ -5,6 +5,7 @@ import MealsList from './components/TestComponent/MealsList';
 import { useMeals } from './components/TestComponent/useMeals';
 import { MealsProvider } from './mealsContext';
 import './App.css'
+import { MealDetails } from './components/TestComponent/MealDetails';
 
 function App() {
   const { isLoading, meals } = useMeals();
@@ -18,8 +19,8 @@ function App() {
         <Route exact path="/">
           <MealsList />
         </Route>
-        <Route exact path="/lol">
-          <p>lol</p>
+        <Route exact path="/meal/:mealId">
+          <MealDetails />
         </Route>
         <Route exact path="/test-component">
           <TestComponent></TestComponent>

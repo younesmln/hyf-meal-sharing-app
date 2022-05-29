@@ -1,17 +1,32 @@
-import React from 'react';
-import { getMeals } from '../api';
+import { useState, useEffect } from 'react';
+import { getMeals, getMeal } from '../api';
 
 export function useMeals() {
-    const [meals, setMeals] = React.useState();
-    const [isLoading, setIsLoading] = React.useState(true);
-  
-    React.useEffect(() => {
-      setIsLoading(true);
-      getMeals().then((response) => {
-        setMeals(response);
-        setIsLoading(false);
-      });
-    }, []);
+  const {  isLoading, response } = useFetch(getMeals);
+  return { isLoading, meals: response }
+}
 
-    return { isLoading, meals }
+
+export function useMeal(mealId) {
+  const getMealApi = () => getMeal(mealId);
+  const {  isLoading, response } = useFetch(getMealApi);
+  return { isLoading, meal: response }
+}
+
+// fetchFunc parameter has to satisfy 2 conditions:
+// - it has to be a function
+// - it has to return a promise
+function useFetch(fetchFunc) {
+  const [response, setResponse] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchFunc().then((response) => {
+      setResponse(response);
+      setIsLoading(false);
+    });
+  }, []);
+
+  return { isLoading, response }
 }

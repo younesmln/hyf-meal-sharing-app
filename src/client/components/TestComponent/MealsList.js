@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import mealsContext from '../../mealsContext';
 import { useMeals } from './useMeals';
 
@@ -8,7 +9,7 @@ function MealsList() {
   const mealsToRender = isLoading
     ? 'not yet'
     : meals.map((aMeal) => {
-        return <li key={aMeal.idmeals}>{aMeal.title}</li>;
+        return <li key={aMeal.idmeals}><Link to={`/meal/${aMeal.idmeals}`}>{aMeal.title}</Link></li>;
       });
 
   return (

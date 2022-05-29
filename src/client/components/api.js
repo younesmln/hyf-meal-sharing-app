@@ -5,3 +5,12 @@ export function getMeals() {
 
   return promise;
 }
+
+
+export function getMeal(mealId) {
+  const promise = fetch(`/api/meals/${mealId}`).then((response) =>
+    response.json()
+  );
+
+  return promise;
+}
